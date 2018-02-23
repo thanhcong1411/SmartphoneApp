@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>access</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+  <ion-list>
+    <ion-item-sliding *ngFor="let user of listOfUsers">
+      <ion-item (click)="GoDetail(user)">
+        <ion-thumbnail item-start>
+          <img src="./assets/images/icons/user.png">
+        </ion-thumbnail>
+        <h2>{{user.name}}</h2>
+      </ion-item>
+      
+      <ion-item-options side="right">
+        <button ion-button color="secondary" (click)="deleteUser(user)">
+          <ion-icon name="close"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</div>
+
+ <p style="text-align:center"> <img *ngIf="addShow == false" (click)="show()" width="80" height="80" src="./assets/images/icons/add-circle.png"> </p>
+ <p style="text-align:center"> <img *ngIf="addShow == true" (click)="show()" width="80" height="80" src="./assets/images/icons/remove-circle.png"> </p>  
+ 
+ <div padding *ngIf="addShow">
+ <ion-list >
+    <ion-item>
+      <ion-input [(ngModel)]="newUserName" type="text" placeholder="nick_name"></ion-input>
+      <button ion-button outline item-end icon-only (click)="adduserSubmit(newUserName);show()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-item>  
+</ion-list>
+</div>
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align:right">{{deviceInRoom.roomname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding> 
+        
+    <ion-card class="adv-map">
+        <div style="position: relative">
+            <img src="{{deviceInRoom.imgPath}}">
+            
+          </div>
+    <page-sensor *ngFor="let sensor of sensorModules" [sensor]="sensor"> </page-sensor>
+     </ion-card>   
+
+        <div *ngFor="let light of lightingControls" >
+            <page-light [light]="light"> </page-light>
+         </div>
+        
+</ion-content>
+
+
+
+

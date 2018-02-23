@@ -1,0 +1,22 @@
+
+<ion-content id="body"> 
+  <!-- <div id="bg"><img width="100%" height="100%" src="./assets/images/logout.jpg"/></div> -->
+
+  <p>
+    <button color="light" ion-button clear icon-start (click)="loggout()">
+        <ion-icon color="light" name='log-out' is-active="false"></ion-icon>
+        LOG OUT
+      </button>
+    </p>
+  <div *ngIf="user">
+    <h1 class="page-header">{{user.name}}</h1>
+    <ul class="list-group">
+      <li class="list-group-item">Username: {{user.username}}</li>
+      <li class="list-group-item">Email: {{user.email}}</li>
+    </ul>
+  </div>
+  
+
+ 
+
+</ion-content>

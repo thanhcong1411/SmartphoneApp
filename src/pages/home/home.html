@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      HOME
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<!--  
+    <ion-segment>
+      <ion-segment-button *ngFor="let floor of floors" (ionSelect)="currentfloor(floor._id)" value=floor.name>
+        {{floor.name}}
+      </ion-segment-button>
+    </ion-segment> -->
+<p>
+<span *ngFor="let floor of floors">
+  <button id="actived" ion-button clear (click)="currentfloor(floor._id)" *ngIf="floor._id==CurrentId" color="moreblue">
+      {{floor.name}}
+  </button>
+  <button ion-button clear (click)="currentfloor(floor._id)" *ngIf="floor._id!=CurrentId" color="primary">
+      {{floor.name}}
+  </button>
+</span>
+</p>
+
+  <ion-list>
+      <ion-item *ngFor="let room of rooms" (click)="devicesInRoom(room._id,room.name,room.imgPath)">
+        <ion-thumbnail item-start>
+          <img src="./assets/images/icons/bluehome.ico">
+        </ion-thumbnail>
+        <h2>{{room.name}}</h2>
+      </ion-item>
+    </ion-list>
+</ion-content>

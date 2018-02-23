@@ -1,0 +1,61 @@
+page-loggin {
+    
+//     #body{
+//     margin-top: 30%;
+// }
+#margin{
+    margin-top: 35%;  
+}
+#tieude{
+    font-weight: bold;
+    font-family: bkhome;
+    font-size: 300%;
+    color:rgb(255, 255, 255);
+    margin-top:10%;
+    margin-bottom: 10%;
+}
+form{
+    width:90%;
+    margin: auto;
+    }
+
+div#bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity: 0.6;
+    -webkit-filter: blur(1px)
+}
+
+#body{
+    background: url("../assets/images/home.jpg") fixed center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+}
+
+ion-input{
+    
+    margin-top: -15px;
+    margin-bottom: -10px;
+    color: white;
+    opacity: 0.9;
+    font-size: 150%
+    }
+ion-label{
+    
+    margin-bottom: -15px;
+    color: white;
+}
+button{
+    margin-top: 50px;
+}
+
+
+}
+@font-face {
+    font-family: 'bkhome';
+    src: url('../assets/fonts/bkhome6.ttf');}

@@ -1,0 +1,24 @@
+
+  <ion-content id="body">
+    <!-- <div id="bg"><img width="100%" height="100%" src="./assets/images/home.jpg"/></div> -->
+    <div id="margin">
+    <p id="tieude" text-center text-wrap>SMARTHOME</p>
+    <form (submit)="onLoginSubmit()">
+
+
+        <ion-label fixed>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="username" name="username"></ion-input>
+
+        <ion-label fixed>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+
+        <ion-label fixed>Host</ion-label>
+        <ion-input type="text" [(ngModel)]="host" name="host"></ion-input>
+        <hr/>
+
+        <button ion-button round color="main" block>LOG IN</button>
+
+    </form>
+  </div>
+
+  </ion-content>

@@ -1,0 +1,63 @@
+
+<div *ngIf="light.dimmable==true && light.typeOfLight!='Air'" >
+  <ion-item-group>
+    <ion-item no-lines color="twitter"> 
+      <ion-label>{{light.name}}</ion-label>
+      <ion-toggle [(ngModel)]="switchValue_adjust" (ionBlur)="getSwitchValue_Dimmer(switchValue_adjust)"></ion-toggle>
+    </ion-item>
+      <ion-item no-lines> 
+        <ion-range disabled={{dis_dimmer}} min="0" max="100" pin="true" debounce="300" [(ngModel)]="lightValue_adjust" (ionBlur)="getSliderValue(lightValue_adjust)" color="primary">
+          <ion-icon range-left small name="sunny"></ion-icon>
+          <ion-icon range-right name="sunny"></ion-icon>
+        </ion-range> 
+      </ion-item>     
+  </ion-item-group>
+  <hr/>
+</div>
+
+<div *ngIf="light.dimmable==false && light.typeOfLight!='RGB'">
+    <ion-item no-lines color="twitter"> 
+      <ion-label>{{light.name}}</ion-label>
+      <ion-toggle [(ngModel)]="lightValue_adjust" (ionBlur)="getSwitchValue(lightValue_adjust)"></ion-toggle>
+    </ion-item> 
+</div> 
+
+<div *ngIf="light.dimmable==false && light.typeOfLight=='RGB'">
+  <hr/>
+    <ion-item-group>
+        <ion-item no-lines color="twitter"> 
+          <ion-label>{{light.name}}</ion-label>
+          <ion-toggle [(ngModel)]="lightValue_adjust" (ionBlur)="getSwitchValue(lightValue_adjust)"></ion-toggle>
+        </ion-item>
+      <color-picker [hexColor]="'#FF0000'" (colorChanged)="getColor($event)" ></color-picker>
+    </ion-item-group>  
+    <hr/>
+</div> 
+
+<div *ngIf="light.typeOfLight=='Air' && light.dimmable==true" >
+  
+<ion-item-group>
+    <ion-item no-lines color="twitter"> 
+      <ion-label>{{light.name}}</ion-label>
+      <ion-toggle  [(ngModel)]="switchValue_adjust" (ionBlur)="getSwitchValue_Dimmer(switchValue_adjust)"></ion-toggle>
+    </ion-item>
+      <ion-item no-lines> 
+        <ion-range disabled={{dis_air}} min="18" max="30" pin="true" debounce="300" [(ngModel)]="lightValue_adjust" (ionBlur)="getSliderValue(lightValue_adjust)" color="primary">
+          <ion-icon range-left small name="arrow-dropleft"></ion-icon>
+          <ion-icon range-right name="arrow-dropright"></ion-icon>
+        </ion-range> 
+      </ion-item>     
+  </ion-item-group>
+  <hr/>
+</div>
+
+<!-- <div class="not-dimmable" *ngIf="light.dimmable==false" >
+  <a class="list-group-item">{{light.name}}</a>
+  <input [(colorPicker)]="color" (colorPickerChange)="getColor($event)" [style.background]="color" *ngIf="light.typeOfLight=='RGB'">
+  <color-picker [hexColor]="'#FF0000'" (colorChanged)="setColor($event)" ></color-picker>
+  <ui-switch [(ngModel)]="lightValue" size="medium-v2" (ionChange)="getSwitchValue(lightValue)"></ui-switch>
+</div> -->
+
+  
+  
+  

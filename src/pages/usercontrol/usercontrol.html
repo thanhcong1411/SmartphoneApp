@@ -1,0 +1,73 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-right>UserControls</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!-- QRCODE -->
+<ion-card>
+ 
+    <img [ngStyle]="isQRcodeAvailable ? '' : grayFilter" src="./assets/images/access-control/qrcode.png"/>
+  
+
+  <ion-item>
+      <button ion-button icon-left item-start (click)="presentConfirmDeleteAllQR()">
+          <ion-icon name="close"></ion-icon>
+          Remove all
+        </button>
+      <button ion-button icon-right item-end (click)="presentPromptCreateQR()">
+          Create
+          <ion-icon name="person-add"></ion-icon>
+           
+        </button>
+    
+  </ion-item>
+</ion-card>
+
+  
+    <ion-note padding item-start>
+      QrCode users
+    </ion-note>
+  
+
+<ion-list>
+    <ion-item *ngFor="let usr of filteredUsers">
+      {{usr.name}}
+      <button ion-button outline item-end icon-right (click)="presentConfirmDeleteOneQR(usr)">
+        remove
+        <ion-icon name="trash"></ion-icon>
+        
+      </button>
+    </ion-item>
+  </ion-list>
+<hr/>
+<hr/>
+<!-- QRCODE -->
+<!-- finger -->
+<ion-card>
+    
+      <img [ngStyle]="isFingerprintAvailable ? '' : grayFilter" src="./assets/images/access-control/fingerprint2.png" />
+    
+  
+    <ion-item>
+        <button ion-button icon-left item-start (click)="presentConfirmDeleteAllFG()">
+            <ion-icon name="close"></ion-icon>
+            Remove all
+          </button>
+        <button ion-button icon-right item-end (click)="connectSensor()">
+            Add
+            <ion-icon name="finger-print"></ion-icon>
+             
+          </button>
+      
+    </ion-item>
+  </ion-card>
+
+
+<!-- finger -->
+</ion-content>
